@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import cv2
 import math
 
+path_slice = "dataset/sliced"
+
 
 def show_images(images):
     num = len(images)
