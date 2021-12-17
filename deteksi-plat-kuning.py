@@ -8,26 +8,25 @@ import cv2
 import Utils
 import sys
 import os
+import perangkatkuning
+
 
 # Folder untuk menyimpan dataset
-path_slice = "dataset/sliced"
+path_slice = "dataset/sliced/plat kuning"
 path_source = "dataset/source"
-path_source_plat_hitam = "dataset/source/plat_hitam"
-path_source_plat_putih= "dataset/source/plat_putih"
-path_source_plat_merah = "dataset/source/plat_merah"
 path_source_plat_kuning = "dataset/source/plat_kuning"
 
 # Template untuk proyeksi vertikal
-pv_template = Utils.proyeksi_vertical(cv2.imread("dataset/templates/plate/template-plat-hitam.jpg", cv2.IMREAD_ANYCOLOR))
+pv_template = perangkatkuning.proyeksi_vertical(cv2.imread("dataset/templates/plate/template-plat-kuning.jpeg", cv2.IMREAD_ANYCOLOR))
 
-for file_name in sorted(os.listdir(path_source)):
-    image = cv2.imread(os.path.join(path_source, file_name))
+for file_name in sorted(os.listdir(path_source_plat_kuning)):
+    image = cv2.imread(os.path.join(path_source_plat_kuning, file_name))
     src = image.copy()
     blurred = image.copy()
     print(image.shape)
     # Filtering gaussian blur
     for i in range(10):
-        blurred = cv2.GaussianBlur(image, (5, 5), 0.5)
+        blurred = cv2.GaussianBlur(image, (5, 5), 1)
 
     # Conversi image BGR2GRAY
     rgb = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
