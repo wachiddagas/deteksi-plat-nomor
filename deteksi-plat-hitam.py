@@ -17,7 +17,7 @@ path_source_plat_hitam = "dataset/source/plat_hitam"
 # Template untuk proyeksi vertikal
 pv_template = Utils.proyeksi_vertical(cv2.imread("dataset/templates/plate/template-plat-hitam.jpg", cv2.IMREAD_ANYCOLOR))
 
-for file_name in sorted(os.listdir(path_source)):
+for file_name in sorted(os.listdir(path_source_plat_hitam)):
     image = cv2.imread(os.path.join(path_source_plat_hitam, file_name))
     src = image.copy()
     blurred = image.copy()

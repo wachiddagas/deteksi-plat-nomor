@@ -186,7 +186,7 @@ def adjust_gamma(image, gamma=1.0):
 
 
 if __name__ == '__main__':
-    src = cv2.imread("dataset/templates/plate/template-plat-kuning.jpeg", cv2.IMREAD_ANYCOLOR)
+    src = cv2.imread("dataset/templates/plate/template-plat-kuning.jpg", cv2.IMREAD_ANYCOLOR)
     print(src.shape)
     cv2.imshow("src", src)
     cv2.waitKey()

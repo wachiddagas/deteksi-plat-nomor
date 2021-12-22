@@ -17,7 +17,7 @@ path_source = "dataset/source"
 path_source_plat_kuning = "dataset/source/plat_kuning"
 
 # Template untuk proyeksi vertikal
-pv_template = perangkatkuning.proyeksi_vertical(cv2.imread("dataset/templates/plate/template-plat-kuning.jpeg", cv2.IMREAD_ANYCOLOR))
+pv_template = perangkatkuning.proyeksi_vertical(cv2.imread("dataset/templates/plate/template-plat-kuning.jpg", cv2.IMREAD_ANYCOLOR))
 
 for file_name in sorted(os.listdir(path_source_plat_kuning)):
     image = cv2.imread(os.path.join(path_source_plat_kuning, file_name))
